@@ -1,17 +1,18 @@
 package server.http;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public interface HttpResponse {
-    HashMap<String, String> getHeaders();
+    Map<String, String> getHeaders();
 
-    int getStatusCode();
+    HttpStatus getStatusCode();
 
     byte[] getContent();
 
     byte[] getBytes();
 
-    void setStatudCode(int statusCode);
+    void setStatusCode(HttpStatus statusCode);
 
     void setContent(byte[] content);
 
