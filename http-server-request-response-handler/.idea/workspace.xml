@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2126eed8-0aff-4973-892c-40e3ef44d460" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/404-not-found.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/cow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/dog.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/giraffe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/hedgehog.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/lizard.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/monkey.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/pigs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/tiger.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/texts/text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/pages/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/hedgehog.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/http/HttpStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/images/404-not-found.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/images/cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/images/tiger.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/assets/texts/text.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/web-server.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/resources/assets/images/web-server.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/RequestHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/RequestHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/StartUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/StartUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/WebConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/WebConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/http/HttpResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/http/HttpResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/http/HttpResponseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/http-server-request-response-handler/server/http/HttpResponseImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/assets/web-server.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/assets/images/web-server.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/RequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/StartUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/StartUp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,7 +56,7 @@
           <entry key="css" value="3" />
           <entry key="html" value="3" />
           <entry key="ico" value="1" />
-          <entry key="java" value="53" />
+          <entry key="java" value="54" />
           <entry key="png" value="3" />
           <entry key="txt" value="4" />
         </counts>
@@ -103,21 +66,21 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="53" />
+          <entry key="JAVA" value="54" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="93" />
-          <entry key="java" value="5405" />
+          <entry key="java" value="6010" />
           <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="93" />
-          <entry key="JAVA" value="5405" />
+          <entry key="JAVA" value="6010" />
           <entry key="PLAIN_TEXT" value="64" />
         </counts>
       </usages-collector>
@@ -126,22 +89,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/StartUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/RequestHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+            <state relative-caret-position="363">
+              <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#283#284#0" expanded="true" />
@@ -152,10 +103,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/http/HttpStatus.java">
+        <entry file="file://$PROJECT_DIR$/src/server/http/HttpRequestImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+            <state relative-caret-position="273">
+              <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,6 +128,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>this</find>
+      <find>url</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/server/Server.java" />
         <option value="$PROJECT_DIR$/src/resources/assets/texts/text.txt" />
         <option value="$PROJECT_DIR$/src/resources/pages/index.html" />
-        <option value="$PROJECT_DIR$/src/server/RequestHandler.java" />
         <option value="$PROJECT_DIR$/src/server/StartUp.java" />
+        <option value="$PROJECT_DIR$/src/server/RequestHandler.java" />
       </list>
     </option>
   </component>
@@ -274,7 +229,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539556680466" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539560394955" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JavaWebIco/Java Web Development Basics/Exercises/HTTP-Protocol" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
@@ -350,12 +305,12 @@
       <workItem from="1539425590552" duration="189000" />
       <workItem from="1539425862592" duration="4845000" />
       <workItem from="1539455061587" duration="1241000" />
-      <workItem from="1539506050371" duration="34590000" />
+      <workItem from="1539506050371" duration="38301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40865000" />
+    <option name="totallyTimeSpent" value="44576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
@@ -559,16 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/http/HttpRequestImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="94" column="32" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/http/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -586,31 +531,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/http/HttpStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/StartUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/http/HttpStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/http/HttpRequestImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
           </folding>
         </state>
       </provider>
