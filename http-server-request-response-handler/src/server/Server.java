@@ -1,10 +1,11 @@
 package server;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.util.concurrent.FutureTask;
 
 public class Server {
     private ServerSocket server;
@@ -24,8 +25,8 @@ public class Server {
 
                 ConnectionHandler connectionHandler = new ConnectionHandler(clientSocket, new RequestHandler());
 
-                FutureTask<?> task = new FutureTask<>(connectionHandler, null);
-                task.run();
+                //FutureTask<?> task = new FutureTask<>(connectionHandler, null);
+                //task.run();
             } catch (SocketTimeoutException e) {
                 System.out.println("Socket Timeout Exception");
             }

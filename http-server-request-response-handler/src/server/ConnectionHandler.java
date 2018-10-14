@@ -1,11 +1,11 @@
 package server;
 
-import server.io.Writer;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import server.io.Reader;
+import server.io.Writer;
+
 import java.net.Socket;
 
 public class ConnectionHandler extends Thread {
