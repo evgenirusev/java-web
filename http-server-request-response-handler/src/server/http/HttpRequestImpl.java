@@ -78,7 +78,7 @@ public class HttpRequestImpl implements HttpRequest {
 
     @Override
     public String getRequestUrl() {
-        return null;
+        return this.requestUrl;
     }
 
     @Override
