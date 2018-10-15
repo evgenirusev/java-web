@@ -28,7 +28,6 @@ public class Server {
 
                 FutureTask<?> task = new FutureTask<>(connectionHandler, null);
                 task.run();
-                System.out.println();
             } catch (SocketTimeoutException e) {
                 System.out.println("Socket Timeout Exception");
             }
