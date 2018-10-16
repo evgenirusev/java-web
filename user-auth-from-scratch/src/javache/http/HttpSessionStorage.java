@@ -36,4 +36,8 @@ public class HttpSessionStorage {
             this.allSessions.remove(id);
         }
     }
+
+    public boolean containsId(String id) {
+        return this.allSessions.containsKey(id);
+    }
 }

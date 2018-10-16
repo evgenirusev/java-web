@@ -1,5 +1,6 @@
 package javache;
 
+import javache.constants.RequestConstants;
 import javache.http.*;
 
 import java.io.File;
@@ -7,8 +8,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static javache.constants.RequestConstants.LOGIN_PAGE_STATIC;
+
 public class RequestHandler {
     private static final String HTML_EXTENSION_AND_SEPARATOR = ".html";
+    private static final String INDEX_PAGE = "index.html";
+    private static final String REGISTER_PAGE = "register.html";
+    private static final String LOGIN_PAGE = "login.html";
+    private static final String DEFAULT_PROFILE_REDIRECT = "users/profile.html";
 
     private HttpRequest httpRequest;
 
@@ -28,11 +35,17 @@ public class RequestHandler {
 
         if(this.httpRequest.getMethod().equals("GET")) {
             result = this.processGetRequest();
+        } else if (this.httpRequest.getMethod().equals("POST")) {
+            result = this.handlePostRequest();
         }
 
         this.sessionStorage.refreshSessions();
 
         return result;
+    }
+
+    private byte[] handlePostRequest() {
+        return null;
     }
 
     private byte[] ok(byte[] content) {
@@ -53,10 +66,9 @@ public class RequestHandler {
         return this.httpResponse.getBytes();
     }
 
-    private byte[] redirect(byte[] content, String location) {
+    private byte[] redirect(String location) {
         this.httpResponse.setStatusCode(HttpStatus.SeeOther);
         this.httpResponse.addHeader("Location", location);
-        this.httpResponse.setContent(content);
         return this.httpResponse.getBytes();
     }
 
@@ -83,6 +95,26 @@ public class RequestHandler {
     }
 
     private byte[] processResourceRequest() {
+        String url = this.httpRequest.getRequestUrl();
+
+        if ("html".equalsIgnoreCase(url)) {
+            if (!isUserLogged()) {
+                if (url.toLowerCase().endsWith(RequestConstants.LOGOUT_PAGE) ||
+                        url.toLowerCase().endsWith(RequestConstants.USER_HOME_PAGE) ||
+                        url.toLowerCase().endsWith(RequestConstants.USER_PROFILE_PAGE) ||
+                        url.toLowerCase().endsWith(RequestConstants.LOGOUT_PAGE + HTML_EXTENSION_AND_SEPARATOR) ||
+                        url.toLowerCase().endsWith(RequestConstants.USER_HOME_PAGE + HTML_EXTENSION_AND_SEPARATOR) ||
+                        url.toLowerCase().endsWith(RequestConstants.USER_PROFILE_PAGE + HTML_EXTENSION_AND_SEPARATOR)) {
+                    return this.redirect(LOGIN_PAGE_STATIC);
+                } else {
+                    if (INDEX_PAGE.equalsIgnoreCase(url) || REGISTER_PAGE.equalsIgnoreCase(url)
+                            || LOGIN_PAGE.equalsIgnoreCase(url)) {
+                        return redirect(DEFAULT_PROFILE_REDIRECT);
+                    }
+                }
+            }
+        }
+
         String assetPath = WebConstants.ASSETS_FOLDER_PATH +
                 this.httpRequest.getRequestUrl();
 
@@ -132,48 +164,31 @@ public class RequestHandler {
     }
 
     private byte[] processGetRequest() {
+
         if(this.httpRequest.getRequestUrl().equals("/")) {
             //INDEX
+            if (isUserLogged()) {
+                return this.processPageRequest("/users/profile");
+            }
 
             return this.processPageRequest("/index");
-        } else if (this.httpRequest.getRequestUrl().equals("/login")) {
-            //LOGIN
-            HttpSession session = new HttpSessionImpl();
-            session.addAttribute("username", "Pesho");
-
-            this.sessionStorage.addSession(session);
-
-            this.httpResponse.addCookie("Javache", session.getId());
-            return this.processPageRequest(this.httpRequest.getRequestUrl());
         } else if (this.httpRequest.getRequestUrl().equals("/logout")) {
             //LOGOUT
-
-            if(!this.httpRequest.getCookies().containsKey("Javache")) {
-                return this.redirect(("You must login to access this route!").getBytes()
-                        , "/");
+            if(!isUserLogged()) {
+                return this.redirect("/login");
             }
 
             String sessionId = this.httpRequest.getCookies().get("Javache").getValue();
             this.sessionStorage.getById(sessionId).invalidate();
-
             this.httpResponse.addCookie("Javache", "deleted; expires=Thu, 01 Jan 1970 00:00:00 GMT;");
 
-            return this.ok(("Successfully expired").getBytes());
-        } else if (this.httpRequest.getRequestUrl().equals("/forbidden")) {
-            //FORBIDDEN
-
-            if(!this.httpRequest.getCookies().containsKey("Javache")) {
-                return this.redirect(("You must login to access this route!").getBytes()
-                        , "/");
-            }
-
-            String sessionId = this.httpRequest.getCookies().get("Javache").getValue();
-            HttpSession session = this.sessionStorage.getById(sessionId);
-            String username = session.getAttributes().get("username").toString();
-
-            return this.ok(("HELLO " + username + "!!!").getBytes());
+            return this.redirect("index.html");
         }
 
         return this.processResourceRequest();
+    }
+
+    public boolean isUserLogged() {
+        return this.httpRequest.getCookies().containsKey("Javache") && this.sessionStorage.containsId(this.httpRequest.getCookies().get("Javache").getValue());
     }
 }

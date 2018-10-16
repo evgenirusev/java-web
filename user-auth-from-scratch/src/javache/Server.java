@@ -19,6 +19,7 @@ public class Server {
 
     private ServerSocket server;
 
+
     public Server(int port) {
         this.port = port;
         this.timeouts = 0;
