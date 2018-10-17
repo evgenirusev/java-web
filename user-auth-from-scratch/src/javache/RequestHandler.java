@@ -11,11 +11,13 @@ import java.nio.file.Paths;
 import static javache.constants.RequestConstants.LOGIN_PAGE_STATIC;
 
 public class RequestHandler {
-    private static final String HTML_EXTENSION_AND_SEPARATOR = ".html";
-    private static final String INDEX_PAGE = "index.html";
-    private static final String REGISTER_PAGE = "register.html";
-    private static final String LOGIN_PAGE = "login.html";
-    private static final String DEFAULT_PROFILE_REDIRECT = "users/profile.html";
+    private static final String HTML_EXTENSION = "html";
+    private static final String INDEX_PAGE = "index";
+    private static final String REGISTER_PAGE = "register";
+    private static final String LOGIN_PAGE = "login";
+    private static final String DEFAULT_PROFILE_REDIRECT = "users/profile";
+    private static final String EMPTY_STRING = "";
+    private static final String DOT = ".";
 
     private HttpRequest httpRequest;
 
@@ -94,29 +96,27 @@ public class RequestHandler {
         return "text/plain";
     }
 
-    private byte[] processResourceRequest() {
-        String url = this.httpRequest.getRequestUrl();
+    private byte[] processResourceRequest(String url) {
 
-        if ("html".equalsIgnoreCase(url)) {
-            if (!isUserLogged()) {
+        if (HTML_EXTENSION.equalsIgnoreCase(getFileExtension(url))) {
+            if (isUserLogged()) {
+                if (INDEX_PAGE.equalsIgnoreCase(url) || REGISTER_PAGE.equalsIgnoreCase(url)
+                        || LOGIN_PAGE.equalsIgnoreCase(url)) {
+                    return redirect(DEFAULT_PROFILE_REDIRECT);
+                }
+            } else {
                 if (url.toLowerCase().endsWith(RequestConstants.LOGOUT_PAGE) ||
                         url.toLowerCase().endsWith(RequestConstants.USER_HOME_PAGE) ||
                         url.toLowerCase().endsWith(RequestConstants.USER_PROFILE_PAGE) ||
-                        url.toLowerCase().endsWith(RequestConstants.LOGOUT_PAGE + HTML_EXTENSION_AND_SEPARATOR) ||
-                        url.toLowerCase().endsWith(RequestConstants.USER_HOME_PAGE + HTML_EXTENSION_AND_SEPARATOR) ||
-                        url.toLowerCase().endsWith(RequestConstants.USER_PROFILE_PAGE + HTML_EXTENSION_AND_SEPARATOR)) {
+                        url.toLowerCase().endsWith(RequestConstants.LOGOUT_PAGE + DOT + HTML_EXTENSION) ||
+                        url.toLowerCase().endsWith(RequestConstants.USER_HOME_PAGE + DOT + HTML_EXTENSION) ||
+                        url.toLowerCase().endsWith(RequestConstants.USER_PROFILE_PAGE + DOT + HTML_EXTENSION)) {
                     return this.redirect(LOGIN_PAGE_STATIC);
-                } else {
-                    if (INDEX_PAGE.equalsIgnoreCase(url) || REGISTER_PAGE.equalsIgnoreCase(url)
-                            || LOGIN_PAGE.equalsIgnoreCase(url)) {
-                        return redirect(DEFAULT_PROFILE_REDIRECT);
-                    }
                 }
             }
         }
 
-        String assetPath = WebConstants.ASSETS_FOLDER_PATH +
-                this.httpRequest.getRequestUrl();
+        String assetPath = WebConstants.ASSETS_FOLDER_PATH + getFileExtension(url) + url;
 
         File file = new File(assetPath);
 
@@ -139,10 +139,24 @@ public class RequestHandler {
         return this.ok(result);
     }
 
-    private byte[] processPageRequest(String page) {
-        String pagePath = WebConstants.PAGES_FOLDER_PATH +
-                page
-                + HTML_EXTENSION_AND_SEPARATOR;
+    private byte[] processPageRequest(String url) {
+
+        switch (url) {
+            case "/":
+                return processResourceRequest("/index.html");
+            case "/index":
+                return processResourceRequest("/index.html");
+            case "/logout":
+                // TODO
+                break;
+
+        }
+
+        if ("/".equals(url) || "/index".equals(url)) {
+            return processResourceRequest("/index.html");
+        }
+
+        String pagePath = WebConstants.PAGES_FOLDER_PATH + url + DOT + HTML_EXTENSION;
 
         File file = new File(pagePath);
 
@@ -164,31 +178,38 @@ public class RequestHandler {
     }
 
     private byte[] processGetRequest() {
+        String url = this.httpRequest.getRequestUrl();
 
-        if(this.httpRequest.getRequestUrl().equals("/")) {
-            //INDEX
-            if (isUserLogged()) {
-                return this.processPageRequest("/users/profile");
-            }
-
-            return this.processPageRequest("/index");
-        } else if (this.httpRequest.getRequestUrl().equals("/logout")) {
-            //LOGOUT
-            if(!isUserLogged()) {
-                return this.redirect("/login");
-            }
-
-            String sessionId = this.httpRequest.getCookies().get("Javache").getValue();
-            this.sessionStorage.getById(sessionId).invalidate();
-            this.httpResponse.addCookie("Javache", "deleted; expires=Thu, 01 Jan 1970 00:00:00 GMT;");
-
-            return this.redirect("index.html");
+        if (httpRequest.isResource()) {
+            return processResourceRequest(url);
         }
 
-        return this.processResourceRequest();
+        return processPageRequest(url);
     }
 
     public boolean isUserLogged() {
         return this.httpRequest.getCookies().containsKey("Javache") && this.sessionStorage.containsId(this.httpRequest.getCookies().get("Javache").getValue());
+    }
+
+    private static String getFileExtension(String fileName) {
+        final int index = fileName.lastIndexOf(DOT);
+
+        if (index != -1 && index != 0) {
+            return fileName.substring(index + 1);
+        } else {
+            return EMPTY_STRING;
+        }
+    }
+
+    private byte[] logout() {
+        if(!isUserLogged()) {
+            return this.redirect("/login");
+        }
+
+        String sessionId = this.httpRequest.getCookies().get("Javache").getValue();
+        this.sessionStorage.getById(sessionId).invalidate();
+        this.httpResponse.addCookie("Javache", "deleted; expires=Thu, 01 Jan 1970 00:00:00 GMT;");
+
+        return this.redirect("index.html");
     }
 }
