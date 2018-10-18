@@ -13,6 +13,7 @@ import static javache.constants.RequestConstants.LOGIN_PAGE_STATIC;
 public class RequestHandler {
     private static final String HTML_EXTENSION = "html";
     private static final String INDEX_PAGE = "index";
+    private static final String INDEX_PAGE_WITH_EXPENTION = "index.html";
     private static final String REGISTER_PAGE = "register";
     private static final String LOGIN_PAGE = "login";
     private static final String DEFAULT_PROFILE_REDIRECT = "users/profile";
@@ -47,6 +48,7 @@ public class RequestHandler {
     }
 
     private byte[] handlePostRequest() {
+
         return null;
     }
 
@@ -142,15 +144,27 @@ public class RequestHandler {
     private byte[] processPageRequest(String url) {
 
         switch (url) {
-            case "/":
-                return processResourceRequest("/index.html");
-            case "/index":
-                return processResourceRequest("/index.html");
-            case "/logout":
-                // TODO
+            case "/": case "/index":
+                return processResourceRequest(INDEX_PAGE_WITH_EXPENTION);
+            case "/home":
+                if (!isUserLogged()) {
+                    return redirect(INDEX_PAGE_WITH_EXPENTION);
+                }
                 break;
-
+            case "/users/profile":
+                if (!isUserLogged()) {
+                    return redirect(INDEX_PAGE_WITH_EXPENTION);
+                }
+                break;
+            case "/logout":
+                if (!isUserLogged()) {
+                    return redirect(LOGIN_PAGE + DOT + HTML_EXTENSION);
+                }
+                this.
+                break;
         }
+
+
 
         if ("/".equals(url) || "/index".equals(url)) {
             return processResourceRequest("/index.html");
