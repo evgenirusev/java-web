@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="data.models.Animal" %><%--
+<%@ page import="data.models.Animal" %>
+<%@ page import="data.repositories.AnimalRepository" %><%--
   Created by IntelliJ IDEA.
   User: Evgeni
   Date: 10/19/2018
@@ -15,7 +16,7 @@
     <h1>All Animals</h1>
     <hr>
     <%
-        List<Animal> allAnimals = (List<Animal>) application.getAttribute("animals");
+        AnimalRepository allAnimals = (AnimalRepository) application.getAttribute("animals");
 
         for (Animal animal : allAnimals) { %>
         <h3>
