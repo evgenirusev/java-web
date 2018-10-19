@@ -12,15 +12,6 @@ import java.util.List;
 @WebServlet("/animals/all")
 public class AnimalsAllServlet extends HttpServlet {
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException, ServletException {
-        List<String> names = new ArrayList<String>() {{
-            add("Pesho");
-            add("Gosho");
-            add("Tosho");
-            add("Evgeni");
-        }};
-
-        this.getServletContext().setAttribute("names", names);
-
         req.getRequestDispatcher("/WEB-INF/jsp/animals/all.jsp").forward(req, resp);
     }
 }

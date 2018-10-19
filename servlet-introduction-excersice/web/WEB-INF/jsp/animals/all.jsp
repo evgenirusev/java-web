@@ -11,10 +11,9 @@
     <title>FDMC</title>
 </head>
 <body>
-Success!
-    <% List<String> animals = (List<String>) application.getAttribute("names"); %>
-    <% for(String animal : animals) {
-        out.println("<h3>" + animal + "</h3>");
-     } %>
+    <h1>All Animals</h1>
+    <hr>
+
+
 </body>
 </html>

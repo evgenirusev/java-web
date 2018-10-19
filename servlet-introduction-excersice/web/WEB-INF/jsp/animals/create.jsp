@@ -13,7 +13,7 @@
     <body>
         <h1>Create An Animal!</h1>
         <br/>
-        <form method="post" action="">
+        <form method="post">
             Name:
             <input type="text" id="name" name="name"/>
             <br/>
@@ -29,6 +29,6 @@
             <button type="submit">Create An Animal</button>
         </form>
         <hr/>
-        <a href="">Back to Home</a>
+        <a href="#">Back to Home</a>
     </body>
 </html>
