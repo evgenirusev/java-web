@@ -29,6 +29,6 @@
             <button type="submit">Create An Animal</button>
         </form>
         <hr/>
-        <a href="#">Back to Home</a>
+        <a href="/">Back to Home</a>
     </body>
 </html>

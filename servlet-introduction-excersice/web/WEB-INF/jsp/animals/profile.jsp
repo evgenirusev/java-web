@@ -32,5 +32,6 @@
     <h3>Color: <%=animal.getColor()%></h3>
     <h3>Number of legs: <%=animal.getNumberOfLegs()%></h3>
     <hr>
+    <a href="/">Back to Home</a>
 </body>
 </html>

@@ -9,17 +9,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>FDMC</title>
+    <title>All Created Animals</title>
 </head>
 <body>
     <h1>All Animals</h1>
     <hr>
     <%
-        List<Animal> allAnimals = (List<Animal>) application.getContext("animals");
+        List<Animal> allAnimals = (List<Animal>) application.getAttribute("animals");
 
         for (Animal animal : allAnimals) { %>
-            <h3><%= animal.getName() %></h3>
+        <h3>
+            <a href="/animals/profile?animalName=<%=animal.getName()%>" >
+                <%= animal.getName() %>
+            </a>
+        </h3>
         <% }
     %>
+    <hr>
+    <a href="/">Back to Home</a>
 </body>
 </html>
