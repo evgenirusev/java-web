@@ -1,4 +1,5 @@
-<%@ page import="entities.Animal" %><%--
+<%@ page import="entities.Animal" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Evgeni
   Date: 10/19/2018
@@ -13,8 +14,18 @@
 <body>
     <%
         String animalName = request.getParameter("animalName");
-        Animal animal = (Animal) application.getAttribute(animalName);
+        List<Animal> allAnimals = (List<Animal>) application.getAttribute("animals");
+        Animal animal = null;
+
+        for (Animal singleAnimal : allAnimals) {
+            if (singleAnimal.getName().equals(animalName)) {
+                animal = singleAnimal;
+                break;
+            }
+        }
+        // Handle null pointer
     %>
+
     <h1>Animal - <%=animal.getName()%></h1>
     <hr>
     <h3>Breed: <%=animal.getBreed()%></h3>

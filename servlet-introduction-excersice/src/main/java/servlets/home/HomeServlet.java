@@ -12,7 +12,10 @@ import java.util.ArrayList;
 
 @WebServlet("/")
 public class HomeServlet extends HttpServlet {
-
+    @Override
+    public void init() throws ServletException {
+        this.getServletContext().setAttribute("animals", new ArrayList<Animal>());
+    }
 
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException, ServletException {

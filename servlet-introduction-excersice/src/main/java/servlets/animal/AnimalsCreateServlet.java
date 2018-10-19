@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/animals/create")
 public class AnimalsCreateServlet extends HttpServlet {
@@ -26,7 +28,8 @@ public class AnimalsCreateServlet extends HttpServlet {
 
         Animal animal = new Animal(name, breed, color, legs);
 
-        this.getServletContext().setAttribute(name, animal);
+        List<Animal> animals = (List<Animal>) this.getServletContext().getAttribute("animals");
+        animals.add(animal);
 
         resp.sendRedirect("/animals/profile?animalName=" + name);
     }
