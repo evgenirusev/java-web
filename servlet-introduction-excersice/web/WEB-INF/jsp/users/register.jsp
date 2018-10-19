@@ -12,10 +12,12 @@
 </head>
 <body>
     <h1>Register!</h1>
-    <div>Username:<input type="text" name="username"></div>
-    <div>Password:<input type="text" name="password"></div>
-    <div>Confirm Password:<input type="text" name="confirmPassword"></div>
-    <input type="submit" value="Register">
+    <form method="post">
+        <div>Username:<input type="text" name="username"></div>
+        <div>Password:<input type="password" name="password"></div>
+        <div>Confirm Password:<input type="password" name="confirmPassword"></div>
+        <input type="submit" value="Register">
+    </form>
     <br>
     <a herf="/">Back to Home</a>
 </body>

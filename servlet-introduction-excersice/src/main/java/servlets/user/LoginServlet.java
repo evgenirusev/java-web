@@ -1,5 +1,7 @@
 package servlets.user;
 
+import data.repositories.UserRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +18,16 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // POST
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        UserRepository userRepo = (UserRepository)
+                this.getServletContext()
+                        .getAttribute("users");
+
+        if () {
+            // TODO
+        }
+
     }
 }
