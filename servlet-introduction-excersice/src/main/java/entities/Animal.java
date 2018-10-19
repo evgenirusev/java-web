@@ -4,13 +4,13 @@ public class Animal {
     private String name;
     private String breed;
     private String color;
-    private String numberOfLegs;
+    private int numberOfLegs;
 
-    public Animal(String name, String breed, String color, String numberOfLegs) {
+    public Animal(String name, String breed, String color, int legs) {
         this.name = name;
         this.breed = breed;
         this.color = color;
-        this.numberOfLegs = numberOfLegs;
+        this.numberOfLegs = legs;
     }
 
     public String getName() {
@@ -37,11 +37,11 @@ public class Animal {
         this.color = color;
     }
 
-    public String getNumberOfLegs() {
+    public int getNumberOfLegs() {
         return numberOfLegs;
     }
 
-    public void setNumberOfLegs(String numberOfLegs) {
+    public void setNumberOfLegs(int numberOfLegs) {
         this.numberOfLegs = numberOfLegs;
     }
 }
