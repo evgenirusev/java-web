@@ -1,4 +1,4 @@
-<%@ page import="entities.Animal" %>
+<%@ page import="data.models.Animal" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Evgeni

@@ -1,6 +1,8 @@
 package servlets.home;
 
-import entities.Animal;
+import data.models.Animal;
+import data.repositories.AnimalRepository;
+import data.repositories.UserRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +16,8 @@ import java.util.ArrayList;
 public class HomeServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
-        this.getServletContext().setAttribute("animals", new ArrayList<Animal>());
+        this.getServletContext().setAttribute("animals", new AnimalRepository());
+        this.getServletContext().setAttribute("users", new UserRepository());
     }
 
     @Override

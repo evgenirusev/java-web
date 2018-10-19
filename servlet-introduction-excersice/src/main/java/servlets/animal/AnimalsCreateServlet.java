@@ -1,6 +1,6 @@
 package servlets.animal;
 
-import entities.Animal;
+import data.models.Animal;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

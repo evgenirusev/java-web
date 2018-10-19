@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="entities.Animal" %><%--
+<%@ page import="data.models.Animal" %><%--
   Created by IntelliJ IDEA.
   User: Evgeni
   Date: 10/19/2018

@@ -1,4 +1,4 @@
-package entities;
+package data.models;
 
 public class Animal {
     private String name;
