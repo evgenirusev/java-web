@@ -21,13 +21,14 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        UserRepository userRepo = (UserRepository)
-                this.getServletContext()
-                        .getAttribute("users");
+        UserRepository userRepo = (UserRepository) this.getServletContext().getAttribute("users");
 
-        if () {
-            // TODO
+        if (!userRepo.areCredentialsValid(username, password)) {
+            resp.sendRedirect("/users/login");
+            return;
         }
+        req.getSession().setAttribute("username", username);
 
+        resp.sendRedirect("/");
     }
 }

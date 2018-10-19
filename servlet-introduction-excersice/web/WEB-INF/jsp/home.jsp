@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
 <h1>Welcome Home!</h1>
@@ -16,9 +15,9 @@
 <br/>
 <a href="/users/register">Register</a>
 <% } else { %>
-<a href="/cats/create">Create Cat</a>
+<a href="/animals/create">Create Cat</a>
 <br/>
-<a href="/cats/all">All Cats</a>
+<a href="/animals/all">All Cats</a>
 <br/>
 <a href="/users/logout">Logout</a>
 <% } %>
