@@ -1,5 +1,6 @@
 <%@ page import="data.models.Animal" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="data.repositories.AnimalRepository" %><%--
   Created by IntelliJ IDEA.
   User: Evgeni
   Date: 10/19/2018
@@ -14,7 +15,7 @@
 <body>
     <%
         String animalName = request.getParameter("animalName");
-        List<Animal> allAnimals = (List<Animal>) application.getAttribute("animals");
+        AnimalRepository allAnimals = (AnimalRepository) application.getAttribute("animals");
         Animal animal = null;
 
         for (Animal singleAnimal : allAnimals) {

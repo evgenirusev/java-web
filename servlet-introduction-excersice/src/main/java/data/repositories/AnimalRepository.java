@@ -3,9 +3,10 @@ package data.repositories;
 import data.models.Animal;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class AnimalRepository {
+public class AnimalRepository implements Iterable<Animal> {
     private Map<String, Animal> animals;
 
     public AnimalRepository() {
@@ -14,5 +15,11 @@ public class AnimalRepository {
 
     public void addAnimal(Animal animal) {
         this.animals.put(animal.getName(), animal);
+    }
+
+    @Override
+    public Iterator<Animal> iterator() {
+        Iterator<Animal> iAnimal = animals.values().iterator();
+        return iAnimal;
     }
 }

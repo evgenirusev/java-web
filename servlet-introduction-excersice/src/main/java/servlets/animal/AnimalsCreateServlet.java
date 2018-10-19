@@ -1,6 +1,7 @@
 package servlets.animal;
 
 import data.models.Animal;
+import data.repositories.AnimalRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,10 +28,9 @@ public class AnimalsCreateServlet extends HttpServlet {
 
         Animal animal = new Animal(name, breed, color, legs);
 
-        List<Animal> animals = (List<Animal>) this.getServletContext().getAttribute("animals");
-        animals.add(animal);
+        AnimalRepository animals = (AnimalRepository) this.getServletContext().getAttribute("animals");
+        animals.addAnimal(animal);
 
-        //resp.sendRedirect("/animals/profile?animalName=" + name);
-        resp.sendRedirect("/");
+        resp.sendRedirect("/animals/profile?animalName=" + name);
     }
 }
