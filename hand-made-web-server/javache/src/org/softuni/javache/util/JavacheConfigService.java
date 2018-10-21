@@ -6,6 +6,7 @@ import org.softuni.javache.io.Reader;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -44,5 +45,9 @@ public class JavacheConfigService {
                 .replace("request-handlers: ", "")
                 .split(","))
                 .collect(Collectors.toSet());
+    }
+
+    public Set<String> getRequestHandlerPriority() {
+        return Collections.unmodifiableSet(this.requestHandlerPriority);
     }
 }

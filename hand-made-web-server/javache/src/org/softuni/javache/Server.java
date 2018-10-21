@@ -1,6 +1,8 @@
 package org.softuni.javache;
 
 import org.softuni.javache.api.RequestHandler;
+import org.softuni.javache.util.JavacheConfigService;
+import org.softuni.javache.util.RequestHandlerLoadingService;
 
 import java.io.*;
 import java.net.*;
@@ -20,11 +22,17 @@ public class Server {
 
     private ServerSocket server;
 
+    private JavacheConfigService javacheConfigService;
+
     private Set<RequestHandler> requestHandlers;
+
+    private RequestHandlerLoadingService requestHandlerLoadingService;
 
     public Server(int port) {
         this.port = port;
         this.timeouts = 0;
+        this.javacheConfigService = new JavacheConfigService();
+        this.requestHandlerLoadingService = new RequestHandlerLoadingService();
     }
 
     public void run() throws IOException {
