@@ -24,8 +24,6 @@ public class Server {
 
     private JavacheConfigService javacheConfigService;
 
-    private Set<RequestHandler> requestHandlers;
-
     private RequestHandlerLoadingService requestHandlerLoadingService;
 
     public Server(int port) {
@@ -33,6 +31,11 @@ public class Server {
         this.timeouts = 0;
         this.javacheConfigService = new JavacheConfigService();
         this.requestHandlerLoadingService = new RequestHandlerLoadingService();
+        this.initRequestHandlers();
+    }
+
+    private void initRequestHandlers() {
+        this.requestHandlerLoadingService.loadRequestHandlers(this.javacheConfigService.getRequestHandlerPriority());
     }
 
     public void run() throws IOException {
@@ -46,7 +49,7 @@ public class Server {
                 clientSocket.setSoTimeout(SOCKET_TIMEOUT_MILLISECONDS);
 
                 ConnectionHandler connectionHandler
-                        = new ConnectionHandler(clientSocket, null);
+                        = new ConnectionHandler(clientSocket, this.requestHandlerLoadingService.getRequestHandlers());
 
                 FutureTask<?> task = new FutureTask<>(connectionHandler, null);
                 task.run();

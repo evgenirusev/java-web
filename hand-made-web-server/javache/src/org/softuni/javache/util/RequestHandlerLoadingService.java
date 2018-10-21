@@ -12,15 +12,12 @@ public class RequestHandlerLoadingService {
     public RequestHandlerLoadingService() { }
 
     public Set<RequestHandler> getRequestHandlers() {
-        if (this.requestHandlers == null) {
-            this.loadRequestHandlers();
-        }
-
         return Collections.unmodifiableSet(requestHandlers);
     }
 
-    private void loadRequestHandlers() {
+    public void loadRequestHandlers(Set<String> requestHandlerPriority) {
         this.requestHandlers = new LinkedHashSet<>();
+
 
     }
 }
