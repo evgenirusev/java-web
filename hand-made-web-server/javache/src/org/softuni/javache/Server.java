@@ -1,8 +1,6 @@
 package org.softuni.javache;
 
 import org.softuni.javache.api.RequestHandler;
-import org.softuni.javache.http.HttpSessionStorage;
-import org.softuni.javache.http.HttpSessionStorageImpl;
 
 import java.io.*;
 import java.net.*;
@@ -22,12 +20,11 @@ public class Server {
 
     private ServerSocket server;
 
-    private Set<RequestHandler> requesthandlers;
+    private Set<RequestHandler> requestHandlers;
 
-    public Server(int port, Set<RequestHandler> requestHandlers) {
+    public Server(int port) {
         this.port = port;
         this.timeouts = 0;
-        this.requesthandlers = requestHandlers;
     }
 
     public void run() throws IOException {
@@ -41,7 +38,7 @@ public class Server {
                 clientSocket.setSoTimeout(SOCKET_TIMEOUT_MILLISECONDS);
 
                 ConnectionHandler connectionHandler
-                        = new ConnectionHandler(clientSocket, this.requesthandlers);
+                        = new ConnectionHandler(clientSocket, null);
 
                 FutureTask<?> task = new FutureTask<>(connectionHandler, null);
                 task.run();
