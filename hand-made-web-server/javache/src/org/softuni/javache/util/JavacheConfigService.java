@@ -4,7 +4,10 @@ import org.softuni.javache.WebConstants;
 import org.softuni.javache.io.Reader;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class JavacheConfigService {
     private static final String CONFIG_FOLDER_PATH = WebConstants.SERVER_ROOT_FOLDER_PATH + "config/";
@@ -36,6 +39,10 @@ public class JavacheConfigService {
         String configFileContent = Reader.readAllLines(new BufferedInputStream(
                         new FileInputStream(priorityConfigFile)));
 
-        System.out.println(configFileContent);
+        this.requestHandlerPriority =
+        Arrays.stream(configFileContent
+                .replace("request-handlers: ", "")
+                .split(","))
+                .collect(Collectors.toSet());
     }
 }
