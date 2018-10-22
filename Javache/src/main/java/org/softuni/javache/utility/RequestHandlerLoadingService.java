@@ -34,8 +34,8 @@ public class RequestHandlerLoadingService {
     private void loadRequestHandler(Class<?> handlerClass) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         RequestHandler handlerObject =
                 (RequestHandler) handlerClass
-                        .getConstructor(String.class)
-                        .newInstance(WebConstants.SERVER_ROOT_FOLDER_PATH);
+                        .getConstructor()
+                        .newInstance();
 
         this.requestHandlers.add(handlerObject);
     }
@@ -99,7 +99,6 @@ public class RequestHandlerLoadingService {
 
     public void loadRequestHandlers(Set<String> requestHandlersPriority) throws NoSuchMethodException, IOException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
         this.requestHandlers = new LinkedHashSet<>();
-
         this.loadLibraryFiles(requestHandlersPriority);
     }
 }

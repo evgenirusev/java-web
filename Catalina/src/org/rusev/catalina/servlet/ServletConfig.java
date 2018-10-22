@@ -1,9 +1,9 @@
 package org.rusev.catalina.servlet;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public interface ServletConfig {
-    HashMap<String, Object> allGetAttributes();
+    Map<String, Object> allGetAttributes();
 
     Object getAttribute(String name);
 

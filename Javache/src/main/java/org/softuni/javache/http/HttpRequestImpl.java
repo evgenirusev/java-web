@@ -34,7 +34,8 @@ public class HttpRequestImpl implements HttpRequest {
     }
 
     private void initRequestUrl(String requestContent) {
-        this.setRequestUrl(requestContent.split("[\\s\\?]")[1]);
+        // TODO
+//        this.setRequestUrl(requestContent.split("[\\s\\?]")[1]);
     }
 
     private void initHeaders(String requestContent) {
@@ -55,25 +56,26 @@ public class HttpRequestImpl implements HttpRequest {
     }
 
     private void initQueryParameters(String requestContent) {
-        this.queryParameters = new HashMap<>();
-
-        String fullRequestUrl = requestContent.split("[\\s]")[1];
-
-        if (fullRequestUrl.split("\\?").length < 2) {
-            return;
-        }
-
-        String queryString = fullRequestUrl.split("\\?")[1];
-        String[] queryKeyValuePairs = queryString.split("\\&");
-
-        for (int i = 0; i < queryKeyValuePairs.length; i++) {
-            String[] queryKeyValuePair = queryKeyValuePairs[i].split("\\=");
-
-            String queryParameterKey = queryKeyValuePair[0];
-            String queryParameterValue = queryKeyValuePair[1];
-
-            this.queryParameters.putIfAbsent(queryParameterKey, queryParameterValue);
-        }
+        // TODO
+//        this.queryParameters = new HashMap<>();
+//
+//        String fullRequestUrl = requestContent.split("[\\s]")[1];
+//
+//        if (fullRequestUrl.split("\\?").length < 2) {
+//            return;
+//        }
+//
+//        String queryString = fullRequestUrl.split("\\?")[1];
+//        String[] queryKeyValuePairs = queryString.split("\\&");
+//
+//        for (int i = 0; i < queryKeyValuePairs.length; i++) {
+//            String[] queryKeyValuePair = queryKeyValuePairs[i].split("\\=");
+//
+//            String queryParameterKey = queryKeyValuePair[0];
+//            String queryParameterValue = queryKeyValuePair[1];
+//
+//            this.queryParameters.putIfAbsent(queryParameterKey, queryParameterValue);
+//        }
     }
 
     private void initBodyParameters(String requestContent) {
