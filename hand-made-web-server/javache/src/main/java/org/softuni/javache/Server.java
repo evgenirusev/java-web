@@ -1,12 +1,14 @@
 package org.softuni.javache;
 
-import org.softuni.javache.api.RequestHandler;
-import org.softuni.javache.util.JavacheConfigService;
-import org.softuni.javache.util.RequestHandlerLoadingService;
+import org.softuni.javache.utility.InputStreamCachingService;
+import org.softuni.javache.utility.JavacheConfigService;
+import org.softuni.javache.utility.LoggingService;
+import org.softuni.javache.utility.RequestHandlerLoadingService;
 
-import java.io.*;
-import java.net.*;
-import java.util.Set;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.concurrent.FutureTask;
 
 public class Server {
@@ -22,6 +24,8 @@ public class Server {
 
     private ServerSocket server;
 
+    private LoggingService loggingService;
+
     private JavacheConfigService javacheConfigService;
 
     private RequestHandlerLoadingService requestHandlerLoadingService;
@@ -29,32 +33,38 @@ public class Server {
     public Server(int port) {
         this.port = port;
         this.timeouts = 0;
+        this.loggingService = new LoggingService();
         this.javacheConfigService = new JavacheConfigService();
         this.requestHandlerLoadingService = new RequestHandlerLoadingService();
         this.initRequestHandlers();
     }
 
     private void initRequestHandlers() {
-        this.requestHandlerLoadingService.loadRequestHandlers(this.javacheConfigService.getRequestHandlerPriority());
+        try {
+            this.requestHandlerLoadingService.loadRequestHandlers(this.javacheConfigService.getRequestHandlersPriority());
+        } catch (Exception e) {
+            this.loggingService.error(e.getMessage());
+        }
     }
 
     public void run() throws IOException {
         this.server = new ServerSocket(this.port);
-        System.out.println(LISTENING_MESSAGE + this.port);
+        this.loggingService.info(LISTENING_MESSAGE + this.port);
 
         this.server.setSoTimeout(SOCKET_TIMEOUT_MILLISECONDS);
 
-        while(true) {
-            try(Socket clientSocket = this.server.accept()) {
+        while (true) {
+            try (Socket clientSocket = this.server.accept()) {
                 clientSocket.setSoTimeout(SOCKET_TIMEOUT_MILLISECONDS);
 
-                ConnectionHandler connectionHandler
-                        = new ConnectionHandler(clientSocket, this.requestHandlerLoadingService.getRequestHandlers());
+                ConnectionHandler connectionHandler = new ConnectionHandler(clientSocket,
+                        this.requestHandlerLoadingService.getRequestHandlers(), new InputStreamCachingService(),
+                        this.loggingService);
 
                 FutureTask<?> task = new FutureTask<>(connectionHandler, null);
                 task.run();
-            } catch(SocketTimeoutException e) {
-                System.out.println(TIMEOUT_DETECTION_MESSAGE);
+            } catch (SocketTimeoutException e) {
+                this.loggingService.warning(TIMEOUT_DETECTION_MESSAGE);
                 this.timeouts++;
             }
         }

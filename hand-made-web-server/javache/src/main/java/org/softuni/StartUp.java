@@ -2,7 +2,6 @@ package org.softuni;
 
 import org.softuni.javache.Server;
 import org.softuni.javache.WebConstants;
-import org.softuni.javache.util.JavacheConfigService;
 
 import java.io.IOException;
 

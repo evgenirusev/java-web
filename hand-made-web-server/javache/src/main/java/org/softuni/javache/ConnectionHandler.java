@@ -1,29 +1,33 @@
 package org.softuni.javache;
 
 import org.softuni.javache.api.RequestHandler;
-import org.softuni.javache.io.Reader;
-import org.softuni.javache.io.Writer;
+import org.softuni.javache.utility.InputStreamCachingService;
+import org.softuni.javache.utility.LoggingService;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Set;
 
 public class ConnectionHandler extends Thread {
-    private static final int CONNECTION_KILL_LIMIT = 5000;
-
-    private static final String REQUEST_CONTENT_LOADING_FAILURE_EXCEPTION_MESSAGE = "Failed loading request content.";
-
     private Socket clientSocket;
 
     private InputStream clientSocketInputStream;
 
     private OutputStream clientSocketOutputStream;
 
+    private InputStreamCachingService inputStreamCachingService;
+
+    private LoggingService loggingService;
+
     private Set<RequestHandler> requestHandlers;
 
-    public ConnectionHandler(Socket clientSocket, Set<RequestHandler> requestHandlers) {
+    public ConnectionHandler(Socket clientSocket, Set<RequestHandler> requestHandlers, InputStreamCachingService inputStreamCachingService, LoggingService loggingService) {
         this.initializeConnection(clientSocket);
         this.requestHandlers = requestHandlers;
+        this.inputStreamCachingService = inputStreamCachingService;
+        this.loggingService = loggingService;
     }
 
     private void initializeConnection(Socket clientSocket) {
@@ -36,11 +40,17 @@ public class ConnectionHandler extends Thread {
         }
     }
 
+
     private void processClientConnection() throws IOException {
         for (RequestHandler requestHandler : this.requestHandlers) {
-            requestHandler.handleRequest(this.clientSocketInputStream, this.clientSocketOutputStream);
+            try {
 
-            if (requestHandler.hasIntercepted()) {break;}
+                requestHandler.handleRequest(this.inputStreamCachingService.getOrCacheInputStream(this.clientSocketInputStream), this.clientSocketOutputStream);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if(requestHandler.hasIntercepted()) break;
         }
     }
 
@@ -51,8 +61,9 @@ public class ConnectionHandler extends Thread {
             this.clientSocketInputStream.close();
             this.clientSocketOutputStream.close();
             this.clientSocket.close();
+            this.inputStreamCachingService.evictCache();
         } catch (IOException e) {
-            e.printStackTrace();
+            this.loggingService.error(e.getMessage());
         }
     }
 }
