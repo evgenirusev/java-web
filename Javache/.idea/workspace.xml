@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01ceaae0-c2dc-43d8-affc-ac4850b92b2f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../Catalina/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/.idea/libraries/javache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/lib/javache.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/src/org/rusev/catalina/ServletDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/src/org/rusev/catalina/servlet/HttpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/src/org/rusev/catalina/servlet/HttpServletRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Catalina/src/org/rusev/catalina/servlet/HttpServletResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Catalina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Catalina/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Catalina/Catalina.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Catalina/Catalina.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javache/javache.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/javache/javache.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/config.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/softuni/javache/utility/RequestHandlerLoadingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/softuni/javache/utility/RequestHandlerLoadingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/run.bat" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -97,8 +108,10 @@
     <session id="97565964">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -114,7 +127,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -182,14 +195,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Javache" type="b2602c69:ProjectViewProjectNode" />
               <item name="Javache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Javache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Javache" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Javache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Javache" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Javache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Javache" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="javache" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Javache" type="b2602c69:ProjectViewProjectNode" />
@@ -256,7 +287,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540218061863" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540220290615" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -355,17 +386,19 @@
       <workItem from="1540146808998" duration="10638000" />
       <workItem from="1540211559823" duration="3298000" />
       <workItem from="1540216302216" duration="1693000" />
-      <workItem from="1540219110753" duration="546000" />
+      <workItem from="1540219110753" duration="959000" />
+      <workItem from="1540220337549" duration="164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97402000" />
+    <option name="totallyTimeSpent" value="97979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33452722" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33954155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -508,13 +541,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/config/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/config/config.ini" />
   </component>
   <component name="masterDetails">
     <states>
