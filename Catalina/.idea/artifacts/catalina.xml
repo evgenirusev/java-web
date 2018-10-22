@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="catalina">
-    <output-path>$PROJECT_DIR$/out/artifacts/catalina</output-path>
-    <root id="archive" name="catalina.jar">
-      <element id="module-output" name="Catalina" />
-    </root>
-  </artifact>
-</component>

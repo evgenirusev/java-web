@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="catalinaapi">
+    <output-path>$PROJECT_DIR$/out/artifacts/catalinaapi</output-path>
+    <root id="archive" name="catalinaapi.jar">
+      <element id="directory" name="org">
+        <element id="directory" name="rusev">
+          <element id="directory" name="catalina">
+            <element id="directory" name="servlet">
+              <element id="dir-copy" path="$PROJECT_DIR$/out/production/Catalina/org/rusev/catalina/servlet" />
+            </element>
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
