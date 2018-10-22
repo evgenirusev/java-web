@@ -1,14 +1,12 @@
 package org.rusev.catalina.servlet;
 
+import java.io.IOException;
+
 public interface HttpServlet {
 
-    // TODO
-    void doGet();
+    void init(ServletConfig servletConfig);
 
-    void doPost();
+    void service(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
-    void doPut();
-
-    void doDelete();
-
+    ServletConfig getServletConfig();
 }
