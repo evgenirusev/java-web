@@ -6,7 +6,9 @@ public interface HttpServlet {
 
     void init(ServletConfig servletConfig);
 
-    void service(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    boolean isInitialized();
 
     ServletConfig getServletConfig();
+
+    void service(HttpServletRequest request, HttpServletResponse response) throws IOException;
 }

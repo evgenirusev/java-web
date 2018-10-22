@@ -7,9 +7,10 @@ import java.io.IOException;
 
 public abstract class BaseHttpServlet implements HttpServlet {
     private ServletConfig servletConfig;
+    private boolean isInitialized;
 
     protected BaseHttpServlet() {
-
+        this.isInitialized = false;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
@@ -48,7 +49,13 @@ public abstract class BaseHttpServlet implements HttpServlet {
 
     @Override
     public void init(ServletConfig servletConfig) {
+        this.isInitialized = true;
         this.servletConfig = servletConfig;
+    }
+
+    @Override
+    public boolean isInitialized() {
+        return this.isInitialized;
     }
 
     @Override
