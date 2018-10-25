@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="javache">
+  <library name="_catalina">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/javache.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/classes/lib/_catalina.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

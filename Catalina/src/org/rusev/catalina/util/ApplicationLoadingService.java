@@ -23,12 +23,12 @@ public class ApplicationLoadingService {
         return file.isFile() && file.getName().endsWith(".jar");
     }
 
+    public ApplicationLoadingService() {
+    }
 
     private void loadApplicationFromFolder(String applciationRootFolderPath) {
         String classesRootFolderPath = applciationRootFolderPath + "classes" + File.separator;
         String librariesRootFolderPath = applciationRootFolderPath + "lib" + File.separator;
-
-
     }
 
     public Map<String, HttpServlet> loadApplications(String applicationsFolderPath) throws IOException {

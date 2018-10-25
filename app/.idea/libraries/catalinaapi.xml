@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="catalinaapi">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/catalinaapi.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
