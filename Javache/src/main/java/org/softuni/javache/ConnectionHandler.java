@@ -50,7 +50,7 @@ public class ConnectionHandler extends Thread {
                 e.printStackTrace();
             }
 
-            if(requestHandler.hasIntercepted()) break;
+            if (requestHandler.hasIntercepted()) break;
         }
     }
 

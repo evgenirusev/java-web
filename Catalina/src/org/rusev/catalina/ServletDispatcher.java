@@ -65,7 +65,7 @@ public class ServletDispatcher implements RequestHandler {
 
 
             this.hasIntercepted = true;
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             this.hasIntercepted = false;
         }

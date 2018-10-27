@@ -12,7 +12,8 @@ public class InputStreamCachingService {
 
     private String content;
 
-    public InputStreamCachingService() {}
+    public InputStreamCachingService() {
+    }
 
     public InputStream getOrCacheInputStream(InputStream inputStream) throws IOException {
         if (content == null) {

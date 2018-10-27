@@ -14,11 +14,11 @@ import java.util.stream.Collectors;
 public class JavacheConfigService {
     private static final String CONFIG_FOLDER_PATH =
             WebConstants.SERVER_ROOT_FOLDER_PATH
-            + "config/";
+                    + "config/";
 
     private static final String REQUEST_HANDLER_PRIORITY_CONFIG_FILE_PATH =
             CONFIG_FOLDER_PATH
-            + "config.ini";
+                    + "config.ini";
 
     private static final String PRIORITY_CONFIG_FILE_NOT_EXIST_EXCEPTION_MESSAGE = "Request handler priority configuration file does not exist!";
 

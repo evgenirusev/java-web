@@ -33,6 +33,7 @@ public abstract class BaseHttpServlet implements HttpServlet {
         response.setContent(("[ERROR] PUT " + request.getRequestUrl()
                 + "[MESSAGE] The page you are looking for is not found").getBytes());
     }
+
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) {
         this.configureNotFound(request, response);
 
@@ -60,7 +61,7 @@ public abstract class BaseHttpServlet implements HttpServlet {
 
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if(request.getMethod().equals("GET")) {
+        if (request.getMethod().equals("GET")) {
             this.doGet(request, response);
         } else if (request.getMethod().equals("POST")) {
             this.doPost(request, response);
