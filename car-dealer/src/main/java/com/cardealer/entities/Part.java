@@ -18,8 +18,9 @@ public class Part {
     @Basic
     private Long quantity;
 
-    @Basic
-    private Long supplier_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
 
     public Part() {
     }
@@ -60,13 +61,5 @@ public class Part {
 
     public void setQuantity(Long quantity) {
         this.quantity = quantity;
-    }
-
-    public Long getSupplier_id() {
-        return supplier_id;
-    }
-
-    public void setSupplier_id(Long supplier_id) {
-        this.supplier_id = supplier_id;
     }
 }
