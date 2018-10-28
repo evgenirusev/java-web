@@ -1,6 +1,10 @@
 package com.cardealer.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "parts")
@@ -22,8 +26,13 @@ public class Part {
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
-    public Part() {
-    }
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "parts_cars",
+            joinColumns = @JoinColumn(name = "part_id"),
+            inverseJoinColumns = @JoinColumn(name = "car_id"))
+    private Set<Car> cars = new HashSet<>();
+
+    public Part() { }
 
     public Part(String name, Double price, Long quantity) {
         this.name = name;
@@ -61,5 +70,21 @@ public class Part {
 
     public void setQuantity(Long quantity) {
         this.quantity = quantity;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
+    public Set<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(Set<Car> cars) {
+        this.cars = cars;
     }
 }

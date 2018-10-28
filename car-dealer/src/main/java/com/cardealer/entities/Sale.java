@@ -12,19 +12,19 @@ public class Sale {
     @Basic
     private Double discount;
 
-    @Basic
-    private Long car_id;
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 
-    @Basic
-    private Long customer_id;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
     public Sale() {
     }
 
     public Sale(Double discount, Long car_id, Long customer_id) {
         this.discount = discount;
-        this.car_id = car_id;
-        this.customer_id = customer_id;
     }
 
     public Long getId() {
@@ -41,21 +41,5 @@ public class Sale {
 
     public void setDiscount(Double discount) {
         this.discount = discount;
-    }
-
-    public Long getCar_id() {
-        return car_id;
-    }
-
-    public void setCar_id(Long car_id) {
-        this.car_id = car_id;
-    }
-
-    public Long getCustomer_id() {
-        return customer_id;
-    }
-
-    public void setCustomer_id(Long customer_id) {
-        this.customer_id = customer_id;
     }
 }

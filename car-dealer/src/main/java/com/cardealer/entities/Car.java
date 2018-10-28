@@ -1,6 +1,10 @@
 package com.cardealer.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "cars")
@@ -17,6 +21,9 @@ public class Car {
 
     @Basic
     private Long traveled_distance;
+
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "cars")
+    private Set<Part> parts;
 
     public Car() {
     }
@@ -57,5 +64,13 @@ public class Car {
 
     public void setTraveled_distance(Long traveled_distance) {
         this.traveled_distance = traveled_distance;
+    }
+
+    public Set<Part> getParts() {
+        return parts;
+    }
+
+    public void setParts(Set<Part> parts) {
+        this.parts = parts;
     }
 }
