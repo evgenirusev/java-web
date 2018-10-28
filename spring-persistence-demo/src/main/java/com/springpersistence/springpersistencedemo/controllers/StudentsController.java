@@ -3,7 +3,6 @@ package com.springpersistence.springpersistencedemo.controllers;
 import com.springpersistence.springpersistencedemo.models.binding.CreateStudentBindingModel;
 import com.springpersistence.springpersistencedemo.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,16 +20,15 @@ public class StudentsController extends BaseController {
         this.studentService = studentService;
     }
 
+    @GetMapping(value = "/all", produces = "application/json")
+    public @ResponseBody Object allStudents() {
+        return this.studentService.getAll();
+    }
+
     @PostMapping("/create")
     public ModelAndView createStudent(CreateStudentBindingModel createStudentBindingModel) {
         this.studentService.create((createStudentBindingModel));
 
         return this.redirect("all");
     }
-
-    @GetMapping(value = "all", produces = "application/json")
-    public @ResponseBody Object allStudents() {
-        return this.studentService.getAll();
-    }
-
 }

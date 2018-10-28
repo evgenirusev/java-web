@@ -26,7 +26,6 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public boolean create(CreateStudentBindingModel createStudentBindingModel) {
         Student student = this.modelMapper.map(createStudentBindingModel, Student.class);
-
         return this.studentRepository.save(student) != null;
     }
 
