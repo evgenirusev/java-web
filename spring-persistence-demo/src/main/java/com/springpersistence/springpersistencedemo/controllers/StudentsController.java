@@ -25,10 +25,14 @@ public class StudentsController extends BaseController {
         return this.studentService.getAll();
     }
 
+    @GetMapping("/create")
+    public String test() {
+        return "users-create";
+    }
+
     @PostMapping("/create")
     public ModelAndView createStudent(CreateStudentBindingModel createStudentBindingModel) {
         this.studentService.create((createStudentBindingModel));
-
         return this.redirect("all");
     }
 }

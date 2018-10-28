@@ -2,43 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="509f4249-5c8b-44da-a41e-69aa41df8abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring-forum/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-forum/demo/src/main/java/com/example/demo/controllers/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-jpa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-boot/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forum/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forum/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/demo/src/main/java/com/example/demo/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forum/demo/src/main/java/com/example/demo/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/springjpa.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/src/main/java/app/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/src/main/java/app/entities/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/src/main/java/app/repositories/CustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/target/classes/app/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/target/classes/app/entities/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springjpa/target/classes/app/repositories/CustomerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/springmysql.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/src/main/java/app/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/src/main/java/app/controllers/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/src/main/java/app/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/src/main/java/app/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/target/classes/app/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/target/classes/app/controllers/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/target/classes/app/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/target/classes/app/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-forum/springmysql/target/classes/application.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-forms-demo/src/main/resources/templates/th-greeting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-persistence-demo/src/main/resources/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-forms-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forms-demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-forms-demo/src/main/resources/templates/greeting.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forms-demo/src/main/resources/templates/greeting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-forms-demo/target/classes/app/controllers/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forms-demo/target/classes/app/controllers/GreetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-forms-demo/target/classes/templates/greeting.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forms-demo/target/classes/templates/greeting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-forum-demo/src/main/java/com/example/demo/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-forum-demo/src/main/java/com/example/demo/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-persistence-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-persistence-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-persistence-demo/src/main/java/com/springpersistence/springpersistencedemo/controllers/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-persistence-demo/src/main/java/com/springpersistence/springpersistencedemo/controllers/StudentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-persistence-demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-persistence-demo/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -83,6 +56,15 @@
       </usages-collector>
     </session>
     <session id="-480879144">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="729819136">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
@@ -152,7 +134,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -222,19 +204,61 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="springmysql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springmysql" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mysql-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mysql-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,7 +269,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540677494944" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-forum" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-forms-demo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -297,17 +321,17 @@
       <updated>1540662142606</updated>
       <workItem from="1540662146165" duration="5100000" />
       <workItem from="1540678094793" duration="630000" />
+      <workItem from="1540736590368" duration="39000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5730000" />
+    <option name="totallyTimeSpent" value="5769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25358167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25716332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -414,7 +438,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
