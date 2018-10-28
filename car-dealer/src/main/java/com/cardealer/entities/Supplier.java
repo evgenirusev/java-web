@@ -17,10 +17,8 @@ public class Supplier {
     @Basic
     private boolean is_importer;
 
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+    @OneToMany
+    @JoinColumn(name = "supplier_id")
     private List<Part> parts = new ArrayList<>();
 
     public List<Part> getParts() {
