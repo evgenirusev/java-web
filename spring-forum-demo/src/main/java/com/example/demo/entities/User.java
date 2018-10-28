@@ -22,9 +22,9 @@ public class User {
     @Column(nullable = false)
     private String email;
 
-    public User(String username, String password) {
+    public User(String username, String email) {
         this.username = username;
-        this.email = password;
+        this.email = email;
     }
 
     public User() {

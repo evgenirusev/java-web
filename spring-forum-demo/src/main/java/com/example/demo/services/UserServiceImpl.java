@@ -7,6 +7,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Set;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -23,5 +26,10 @@ public class UserServiceImpl implements UserService {
     public boolean saveUser(CreateUserBindingModel createUserBindingMode) {
         User user = this.modelMapper.map(createUserBindingMode, User.class);
         return this.userRepository.save(user) != null;
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return this.userRepository.findAll();
     }
 }
