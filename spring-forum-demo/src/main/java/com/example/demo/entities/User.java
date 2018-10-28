@@ -20,11 +20,14 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String password;
+    private String email;
 
     public User(String username, String password) {
         this.username = username;
-        this.password = password;
+        this.email = password;
+    }
+
+    public User() {
     }
 
     public String getId() {
@@ -43,11 +46,11 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
