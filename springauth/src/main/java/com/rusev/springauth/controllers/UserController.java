@@ -53,7 +53,7 @@ public class UserController extends BaseController {
         if (userServiceModel == null || !userServiceModel.getUsername().equals(userLoginBindingModel.getPassword())) {
             return super.redirect("/login");
         }
-        // TODO: HttpSession
+
         return null;
     }
 }

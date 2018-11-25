@@ -1,5 +1,6 @@
 package com.rusev.springauth.entities;
 
+import com.rusev.springauth.entities.enums.UserRole;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -15,6 +16,8 @@ public class User {
     private String password;
 
     private String email;
+
+    private UserRole userRole;
 
     public User() {
     }
@@ -59,5 +62,15 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Column(name = "role")
+        @Enumerated(EnumType.STRING)
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 }

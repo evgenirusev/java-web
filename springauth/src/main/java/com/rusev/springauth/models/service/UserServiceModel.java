@@ -1,5 +1,7 @@
 package com.rusev.springauth.models.service;
 
+import com.rusev.springauth.entities.enums.UserRole;
+
 public class UserServiceModel {
 
     private String id;
@@ -9,6 +11,8 @@ public class UserServiceModel {
     private String password;
 
     private String email;
+
+    private UserRole userRole;
 
     public UserServiceModel() {
     }
@@ -43,5 +47,13 @@ public class UserServiceModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 }
