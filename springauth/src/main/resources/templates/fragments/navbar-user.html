@@ -1,4 +1,4 @@
-<th:block th:fragment="navbar-user">
+<th:block th:fragment="navbar-user" xmlns:th="http://www.w3.org/1999/xhtml">
     <nav class="navbar navbar-expand-lg navbar-light bg-purple">
         <a class="navbar-brand text-white" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -13,7 +13,7 @@
             </ul>
             <ul class="navbar-nav user-data-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="/logout">Logout</a>
+                    <a class="nav-link text-light" th:href="@{/users/logout}">Logout</a>
                 </li>
             </ul>
         </div>

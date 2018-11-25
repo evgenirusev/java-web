@@ -68,4 +68,11 @@ public class UserController extends BaseController {
 
         return super.redirect("/home");
     }
+
+    @GetMapping("/logout")
+    public ModelAndView logout(HttpSession session) {
+        System.out.println("TRUE");
+        session.invalidate();
+        return this.redirect("/");
+    }
 }
