@@ -1,4 +1,4 @@
-package com.rusev.springauth.Config;
+package com.rusev.springauth.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
