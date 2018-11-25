@@ -1,5 +1,6 @@
 package com.rusev.springauth.controllers;
 
+import com.rusev.springauth.entities.enums.UserRole;
 import com.rusev.springauth.models.binding.UserLoginBindingModel;
 import com.rusev.springauth.models.binding.UserRegisterBindingModel;
 import com.rusev.springauth.models.service.UserServiceModel;
@@ -38,7 +39,7 @@ public class UserController extends BaseController {
         }
 
         this.userService.saveUser(userRegisterBindingModel);
-        return super.redirect("/login");
+        return super.redirect("/users/login");
     }
 
     @GetMapping("/login")
@@ -50,10 +51,21 @@ public class UserController extends BaseController {
     public ModelAndView loginConfirm(@ModelAttribute UserLoginBindingModel userLoginBindingModel,
                                      HttpSession httpSession) {
         UserServiceModel userServiceModel = this.userService.getUserByUsername(userLoginBindingModel.getUsername());
-        if (userServiceModel == null || !userServiceModel.getUsername().equals(userLoginBindingModel.getPassword())) {
-            return super.redirect("/login");
+        if (userServiceModel == null || !userLoginBindingModel.getPassword().equals(userServiceModel.getPassword())) {
+            return super.redirect("/users/login");
         }
 
-        return null;
+        UserRole userRole = userServiceModel.getUserRole();
+
+        httpSession.setAttribute("id", userServiceModel.getId());
+        httpSession.setAttribute("username", userServiceModel.getUsername());
+        httpSession.setAttribute("email", userServiceModel.getEmail());
+        httpSession.setAttribute("role", userRole);
+
+        if (userRole == UserRole.ADMIN) {
+            // Return admin-home
+        }
+
+        return super.redirect("/home");
     }
 }

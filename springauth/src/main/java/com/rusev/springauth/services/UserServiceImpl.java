@@ -1,6 +1,7 @@
 package com.rusev.springauth.services;
 
 import com.rusev.springauth.entities.User;
+import com.rusev.springauth.entities.enums.UserRole;
 import com.rusev.springauth.models.binding.UserRegisterBindingModel;
 import com.rusev.springauth.models.service.UserServiceModel;
 import com.rusev.springauth.repositories.UserRepository;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(UserRegisterBindingModel userRegisterBindingModel) {
         User user = this.modelMapper.map(userRegisterBindingModel, User.class);
+        user.setUserRole(UserRole.USER);
         this.userRepository.save(user);
     }
 
