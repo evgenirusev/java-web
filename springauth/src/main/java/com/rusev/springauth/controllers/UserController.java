@@ -63,7 +63,7 @@ public class UserController extends BaseController {
         httpSession.setAttribute("role", userRole);
 
         if (userRole == UserRole.ADMIN) {
-            // Return admin-home
+            return super.redirect("/admin/home");
         }
 
         return super.redirect("/home");
